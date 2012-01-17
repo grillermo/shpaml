@@ -1,6 +1,6 @@
 ## Installation ##
 
-pip install django-shpaml
+pip install git+git://github.com/grillermo/shpaml.git
 
 - OR -
 
