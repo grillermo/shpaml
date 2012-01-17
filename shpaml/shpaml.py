@@ -241,6 +241,11 @@ def tag_and_rest(tag):
 
 def enclose_tag(tag, text):
     start_tag, end_tag = apply_jquery_sugar(tag)
+    if start_tag.startswith('<>'):
+        start_tag = '<'+start_tag[3:]
+    if end_tag.endswith('</>>'):
+        tag = tag.split(' ')[1]
+        end_tag = '</'+tag+'>'+end_tag[:0]
     return start_tag + text + end_tag
 
 def enclose_django_tag(tag, text):
