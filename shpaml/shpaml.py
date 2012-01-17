@@ -100,7 +100,7 @@ def TEXT_ENCLOSING_TAG(m):
 @syntax('> (.*)')
 def SELF_CLOSING_TAG(m):
     tag = m.group(1).strip()
-    return '<%s>' % apply_jquery(tag)[0]
+    return '<%s/>' % apply_jquery(tag)[0]
 
 @syntax('(.*)')
 def RAW_TEXT(m):
